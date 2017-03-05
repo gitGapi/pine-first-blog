@@ -1,4 +1,8 @@
+
 {% load staticfiles %}
+
+<!DOCTYPE html>
+
 <html>
     <head> 
 	<title>Django Pine blog</title>
@@ -11,6 +15,9 @@
     <body>
 	
 	<div class="page-header">
+	    {% if user.is_authenticated %}
+	        <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+	    {% endif %}
 	    <h1><a href="/">Django Pine blog</a></h1>
 	</div>
 	
